@@ -16,7 +16,7 @@ all : $(OBJ_DIR) $(OBJ) main
 $(OBJ_DIR) :
 	mkdir $(OBJ_DIR)
 
-$(OBJ_DIR)/%.o : %.cxx
+$(OBJ_DIR)/%.o : %.cpp
 	$(CC) $(CFLAGS) $(INCLUDE_FLAGS) -o $@ -c $^ 
 
 main: main.cpp
