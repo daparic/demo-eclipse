@@ -23,4 +23,4 @@ main: main.cpp
 	$(CC) $(CFLAGS) $(INCLUDE_FLAGS) -o $@ $^ 
 
 clean:
-	rm -rf $(OBJ_DIR)
+	rm -rf $(OBJ_DIR) main *.o *.bdf
