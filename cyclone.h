@@ -8,7 +8,7 @@ private:
     int u;
 
 public:
-    void doit(int a, int b) // Violation - CC value: 11
+    void doit(int a, int b) // 11
     {
         switch (a) {
         case 1: // 1
