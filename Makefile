@@ -1,4 +1,4 @@
-CC=g++
+CXX=g++
 INCLUDE_FLAGS=-Iinclude
 DEBUG_FLAGS=
 CFLAGS=-g
@@ -18,10 +18,14 @@ $(OBJ_DIR) :
 	mkdir $(OBJ_DIR)
 
 $(OBJ_DIR)/%.o : %.cpp
-	$(CC) $(CFLAGS) $(INCLUDE_FLAGS) -o $@ -c $^ 
+	$(CXX) $(CFLAGS) $(INCLUDE_FLAGS) -o $@ -c $^ 
 
 main: main.cpp
-	$(CC) $(CFLAGS) $(INCLUDE_FLAGS) -o $@ $^ 
+	$(CXX) $(CFLAGS) $(INCLUDE_FLAGS) -o $@ $^ 
 
 clean:
 	rm -rf $(OBJ_DIR) main *.o *.bdf
+
+show:
+	@echo "CC is $(CC)"
+	@echo "CXX is $(CXX)"
