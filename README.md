@@ -1,6 +1,6 @@
 Windows:
 ```
-make "CC=cpptestscan aarch64-linux-gnu-gcc.exe" CXX="cpptestscan aarch64-linux-gnu-g++.exe"
+make "CC=cpptestscan $(cygpath -w $(which aarch64-linux-gnu-gcc))" CXX="cpptestscan $(cygpath -w $(which aarch64-linux-gnu-g++))"
 ```
 
 Linux:
