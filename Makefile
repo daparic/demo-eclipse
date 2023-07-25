@@ -24,7 +24,7 @@ main: main.cpp $(OBJ)
 	$(CXX) $(CFLAGS) $(INCLUDE_FLAGS) -o $@ $^ 
 
 clean:
-	rm -rf $(OBJ_DIR) main *.o *.bdf
+	rm -rf $(OBJ_DIR) main *.o
 
 show:
 	@echo "CC is $(CC)"
