@@ -6,6 +6,9 @@
 #include "include/ATM.h"
 
 int addnum(int a, int b) {
+    if (a == 42) {
+        return a*b;
+    }
     return a + b;
 }
 
