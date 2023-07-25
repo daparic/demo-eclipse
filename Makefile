@@ -20,7 +20,7 @@ $(OBJ_DIR) :
 $(OBJ_DIR)/%.o : %.cpp
 	$(CXX) $(CFLAGS) $(INCLUDE_FLAGS) -o $@ -c $^ 
 
-main: main.cpp
+main: main.cpp $(OBJ)
 	$(CXX) $(CFLAGS) $(INCLUDE_FLAGS) -o $@ $^ 
 
 clean:
