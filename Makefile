@@ -8,6 +8,7 @@ OBJ = $(OBJ_DIR)/ATM.o \
 	  $(OBJ_DIR)/Bank.o \
 	  $(OBJ_DIR)/BaseDisplay.o \
 	  $(OBJ_DIR)/decide.o \
+	  $(OBJ_DIR)/dbutil.o \
 	  $(OBJ_DIR)/Account.o
 
 .PHONY = clean all
