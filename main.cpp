@@ -72,7 +72,10 @@ bool decide(bool a, bool b, bool c) {
     return false;
 }
 
+int numbers[] = { 1, 2, 3 };
+
 int main() {
+	int number = numbers[4];
     std::cout << "*** Parasoft C/C++test Demo ***\n";
     Bank bank;
     BaseDisplay display;
