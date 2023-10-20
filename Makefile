@@ -1,4 +1,4 @@
-CXX=g++
+CXX=clang++
 INCLUDE_FLAGS=-Iinclude
 DEBUG_FLAGS=
 CFLAGS=-g -D_FORTIFY_SOURCE=2 -O2
