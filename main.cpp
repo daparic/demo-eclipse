@@ -66,7 +66,7 @@ int addnum(int a, int b) {
 }
 
 bool decide(bool a, bool b, bool c) {
-    if (a && b && c) {
+    if (a && (b || c)) {
         return true;
     }
     return false;
