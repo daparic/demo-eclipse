@@ -3,6 +3,7 @@
 
 ATM::ATM(Bank* bank, BaseDisplay* display)
 {
+    // testing codeql
     myBank = bank;
     myDisplay = display;
 }
