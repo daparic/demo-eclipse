@@ -7,6 +7,12 @@
 
 #include "include/dbutil.h"
 
+#include "misc/BD-PB-SUBSEQFRWD.h"
+#include "include/CODSTA-MCPP-01-3.h"
+#include "misc/aaa/CODSTA-MCPP-15_b-3.h"
+#include "misc/aaa/CODSTA-MCPP-53.h"
+#include "misc/bbb/ccc/CODSTA-MCPP-40.h"
+
 void displayPersonalInfo(Person *person) {
     printf("Name: %s\n", person->name);
     printf("Salary: %d\n", person->salary);
@@ -72,14 +78,24 @@ bool decide(bool a, bool b, bool c) {
     return false;
 }
 
+void example(int);
+
 int numbers[] = { 1, 2, 3 };
 
 int main() {
+    A aobj;
+    Foo fobj;
 	int number = numbers[4];
     std::cout << "*** Parasoft C/C++test Demo ***\n";
     Bank bank;
     BaseDisplay display;
     ATM atm(&bank, &display);
     atm.viewAccount(12345, "password");
+
+    example(0);
+
+    int32_t i = 0;
+    foo (0, i);
+
     return 0;
 }
