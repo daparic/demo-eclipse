@@ -1,7 +1,9 @@
 CXX=g++
+CC=gcc
 INCLUDE_FLAGS=-Iinclude
 DEBUG_FLAGS=
 CXXFLAGS=-g -D_FORTIFY_SOURCE=2 -O2 -std=c++17 -Wall
+CLAGS=-g -D_FORTIFY_SOURCE=2 -O2 -Wall
 OBJ_DIR=obj
 
 # Check if the compiler supports C++17
@@ -28,6 +30,7 @@ OBJ = $(OBJ_DIR)/ATM.o \
 	  $(OBJ_DIR)/CODSTA-MCPP-48.o \
 	  $(OBJ_DIR)/CODSTA-MCPP-57.o \
 	  $(OBJ_DIR)/CODSTA-MCPP-45.o \
+	  $(OBJ_DIR)/my.o \
 	  $(OBJ_DIR)/Account.o
 
 .PHONY = clean all
@@ -52,6 +55,9 @@ $(OBJ_DIR)/%.o: misc/bbb/%.cpp
 
 $(OBJ_DIR)/%.o: misc/bbb/ccc/%.cpp
 	$(CXX) $(CXXFLAGS) $(INCLUDE_FLAGS) -o $@ -c $^ 
+
+$(OBJ_DIR)/%.o: misc/my/%.c
+	$(CC) -std=c99 $(CFLAGS) $(INCLUDE_FLAGS) -o $@ -c $^ 
 
 main: main.cpp $(OBJ)
 	$(CXX) $(CXXFLAGS) $(INCLUDE_FLAGS) -o $@ $^ 

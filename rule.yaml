@@ -1,0 +1,8 @@
+rules:
+  - id: avoid-malloc
+    patterns:
+      - pattern: malloc(...)
+    message: "Avoid using `malloc()`, it is unsafe for our special case"
+    languages: [c, cpp]
+    severity: ERROR
+
