@@ -1,8 +1,15 @@
 CXX=g++
 INCLUDE_FLAGS=-Iinclude
 DEBUG_FLAGS=
-CFLAGS=-g -D_FORTIFY_SOURCE=2 -O2
+CXXFLAGS=-g -D_FORTIFY_SOURCE=2 -O2 -std=c++17 -Wall
 OBJ_DIR=obj
+
+# Check if the compiler supports C++17
+CXX17_SUPPORTED := $(shell $(CXX) -std=c++17 -dM -E - < /dev/null 2>/dev/null 1>&2 && echo 1 || echo 0)
+
+ifeq ($(CXX17_SUPPORTED),1)
+    CXXFLAGS += -DSUPPORTS_CPP17
+endif
 
 OBJ = $(OBJ_DIR)/ATM.o \
 	  $(OBJ_DIR)/Bank.o \
@@ -31,23 +38,23 @@ $(OBJ_DIR) :
 	mkdir $(OBJ_DIR)
 
 $(OBJ_DIR)/%.o : %.cpp
-	$(CXX) $(CFLAGS) $(INCLUDE_FLAGS) -o $@ -c $^ 
+	$(CXX) $(CXXFLAGS) $(INCLUDE_FLAGS) -o $@ -c $^ 
 	echo "[$@ - $^]"
 
 $(OBJ_DIR)/%.o: misc/%.cpp
-	$(CXX) $(CFLAGS) $(INCLUDE_FLAGS) -o $@ -c $^ 
+	$(CXX) $(CXXFLAGS) $(INCLUDE_FLAGS) -o $@ -c $^ 
 
 $(OBJ_DIR)/%.o: misc/aaa/%.cpp
-	$(CXX) -std=c++17 $(CFLAGS) $(INCLUDE_FLAGS) -o $@ -c $^ 
+	$(CXX) -std=c++17 $(CXXFLAGS) $(INCLUDE_FLAGS) -o $@ -c $^ 
 
 $(OBJ_DIR)/%.o: misc/bbb/%.cpp
-	$(CXX) $(CFLAGS) $(INCLUDE_FLAGS) -o $@ -c $^ 
+	$(CXX) $(CXXFLAGS) $(INCLUDE_FLAGS) -o $@ -c $^ 
 
 $(OBJ_DIR)/%.o: misc/bbb/ccc/%.cpp
-	$(CXX) $(CFLAGS) $(INCLUDE_FLAGS) -o $@ -c $^ 
+	$(CXX) $(CXXFLAGS) $(INCLUDE_FLAGS) -o $@ -c $^ 
 
 main: main.cpp $(OBJ)
-	$(CXX) $(CFLAGS) $(INCLUDE_FLAGS) -o $@ $^ 
+	$(CXX) $(CXXFLAGS) $(INCLUDE_FLAGS) -o $@ $^ 
 
 clean:
 	rm -rf $(OBJ_DIR) main *.o
@@ -55,3 +62,4 @@ clean:
 show:
 	@echo "CC is $(CC)"
 	@echo "CXX is $(CXX)"
+	@echo CXX17_SUPPORTED=$(CXX17_SUPPORTED)
