@@ -1,3 +1,8 @@
+semgrep:
+```
+semgrep --config=rule.yaml .
+```
+
 Windows:
 ```
 make "CC=cpptestscan $(cygpath -w $(which aarch64-linux-gnu-gcc))" CXX="cpptestscan $(cygpath -w $(which aarch64-linux-gnu-g++))"
