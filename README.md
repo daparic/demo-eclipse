@@ -1,6 +1,7 @@
 semgrep:
 ```
 semgrep --config=rule.yaml .
+semgrep --config ~/src/semgrep-rules/c .
 ```
 
 Windows:
