@@ -3,5 +3,5 @@
 void myfunc(const char* p)
 {
     char buff[100];
-    gets(buff);
+    // gets(buff);
 }
