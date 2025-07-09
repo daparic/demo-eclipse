@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.10)
 project (demo-eclipse)
 
 # This line is important for Parasoft C/C++ code analysis to work
-include(/opt/parasoft/cpptest_professional-2024.2.0-linux.x86_64/integration/cmake/cpptest-project.cmake)
+include(/opt/parasoft/cpptest_professional-2025.1.0-linux.x86_64/integration/cmake/cpptest-project.cmake)
 
 #################################################################################################
 # this block here is not important, it's just to check if we are using a C++17 standard compiler
